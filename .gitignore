@@ -1,0 +1,16 @@
+# Raw data
+data/raw/
+data/trimmed/
+
+# Salmon index
+data/references/salmon_index/
+
+# Results
+results/
+
+# R session files
+.Rhistory
+.RData
+
+# macOS
+.DS_Store
