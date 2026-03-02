@@ -1,0 +1,10 @@
+{
+    "salmon_version": "1.10.3",
+    "index": "data/references/salmon_index",
+    "libType": "A",
+    "unmatedReads": "data/raw/SRR10551658_1.fastq.gz",
+    "threads": "8",
+    "validateMappings": [],
+    "output": "results/salmon/SRR10551658_quant",
+    "auxDir": "aux_info"
+}
