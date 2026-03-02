@@ -94,7 +94,7 @@ Gene Ontology ORA was performed using significantly differentially expressed (DE
   <img src="results/r_outputs/ORA_GO_BP_mature_vs_early.png" width="60%">
 </p>
 <p align="center">
-  <em><strong>Figure 4.</strong> Gene Ontology (GO) biological process over-representation analysis for the mature vs early comparison. Each dot represents an enriched GO term. The x-axis shows the GeneRatio (the proportion of differentially expressed genes associated with each term), and dot size reflects the number of genes contributing to that term. Dot color represents the adjusted p-value (p.adjust), with lighter colors indicating stronger statistical significance. Enriched processes are primarily related to transmembrane transport, organic and oxoacid metabolism, energy generation, and ATP metabolic processes.</em>
+  <em><strong>Figure 4.</strong> GO biological process enrichment for the mature vs early comparison. Dots represent enriched pathways, sized by the number of genes and colored by adjusted p-value. GeneRatio indicates the proportion of differentially expressed genes within each pathway. Metabolism- and transport-related processes are prominently enriched, consistent with metabolic adaptation during biofilm maturation. </em>
 </p>
 
 Gene Set Enrichment Analysis (GSEA) further identified significant enrichment of metabolism-associated GO biological process terms across the ranked gene list. Both positive and negative normalized enrichment scores were observed, reflecting coordinated upregulation and downregulation of gene sets between mature and early stages (Figure 4).
