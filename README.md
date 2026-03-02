@@ -33,9 +33,26 @@ Principal component analysis (PCA) was performed on variance-stabilized (VST) no
 <p align="center">
   <img src="results/r_outputs/PCA_stage.png" width="60%">
 </p>
+<p align="center">
+  <em><strong>Figure 1.</strong> Figure 1. PCA of gene expression across early, thin, and mature biofilm stages. PC1 explains 67% of the total variation and PC2 explains 26%. Samples cluster by developmental stage, indicating clear differences in gene expression as the biofilm matures. Each point represents one biological replicate.</em>
+</p>
 
 ### Differential Expression Overview
-Differential expression analysis was performed between each pair of biofilm stages (early vs thin, early vs mature, and thin vs mature) using DESeq2 with log2 fold change shrinkage. The mature versus early comparison exhibited the greatest number and magnitude of transcriptional changes (Table 2). Volcano and MA plots demonstrated widespread differential expression across biofilm stages (Figures 2 and 3). In all comparisons, most genes were centered near zero log2 fold change, indicating limited expression differences for most genes. However, the mature versus early contrast exhibited the greatest dispersion of fold changes and the highest number of significantly upregulated and downregulated genes. Comparatively, the mature versus thin and thin versus early comparisons displayed narrower and intermediate magnitudes of fold change, respectively.
+Differential expression analysis was performed between each pair of biofilm stages (early vs thin, early vs mature, and thin vs mature) using DESeq2 with log2 fold change shrinkage. The mature versus early comparison exhibited the greatest number and magnitude of transcriptional changes (Table 2). Volcano plots demonstrated widespread differential expression across biofilm stages (Figures 2). In all comparisons, most genes were centered near zero log2 fold change, indicating limited expression differences for most genes. However, the mature versus early contrast exhibited the greatest dispersion of fold changes and the highest number of significantly upregulated and downregulated genes. Comparatively, the mature versus thin and thin versus early comparisons displayed narrower and intermediate magnitudes of fold change, respectively.
+
+<p align="center">
+  <em><strong>Table 1.</strong> Differentially Expressed Genes Across Biofilm Stages.</em>
+</p><div align="center">
+
+| Expression Pattern | Regulation range (log2FC) | Thin vs Early | Mature vs Thin | Mature vs Early |
+|-------------------|--------------------------|---------------|----------------|-----------------|
+| Upregulated       | ≥ 2 (Up4)                | 92            | 135            | 294             |
+|                   | 1 to < 2 (Up2)           | 296           | 496            | 657             |
+| Downregulated     | -1 to > -2 (Dn2)         | 369           | 403            | 593             |
+|                   | ≤ -2 (Dn4)               | 88            | 66             | 177             |
+| **Total DEG**     | padj < 0.05              | **2226**      | **2394**       | **3015**        |
+
+</div>
 
 <p align="center">
   <div style="display: inline-block; text-align: center; width: 30%;">
@@ -55,26 +72,52 @@ Differential expression analysis was performed between each pair of biofilm stag
 </p>
 
 <p align="center">
-  <em><strong>Figure 2.</strong> Volcano plots for (A) mature vs early, (B) mature vs thin, and (C) thin vs early comparisons.</em>
+  <em><strong>Figure 2.</strong> Volcano plots showing differential gene expression between biofilm developmental stages. (A) Mature vs early, (B) mature vs thin, and (C) thin vs early comparisons. Each point represents one gene. The x-axis shows log₂ fold change in expression, and the y-axis shows the −log₁₀ adjusted p-value. Red points indicate significantly upregulated genes, blue points indicate significantly downregulated genes, and grey points represent genes that are not statistically significant. The mature vs early comparison (A) shows the largest spread of fold changes, indicating the greatest overall transcriptional difference between stages.
+</em>
 </p>
 
 ### Specific Gene Examples
-Several genes showed large magnitude log2 fold changes in the mature versus early comparison. YNR071C (log2FC = 9.01), YNR073C (log2FC = 8.21), and YIR019C (log2FC = 5.42) were among the most strongly upregulated genes in mature biofilms (padj < 10⁻¹¹⁵). Conversely, YJL052W (log2FC = −5.34), YGR087C (log2FC = −5.09), and YHR094C (log2FC = −4.99) were significantly downregulated relative to early biofilms (padj < 10⁻¹²⁵). These genes displayed opposing expression patterns between early and mature stages (Figure 4).
+Several genes showed large magnitude log2 fold changes in the mature versus early comparison. YNR071C (log2FC = 9.01), YNR073C (log2FC = 8.21), and YIR019C (log2FC = 5.42) were among the most strongly upregulated genes in mature biofilms (padj < 10⁻¹¹⁵). Conversely, YJL052W (log2FC = −5.34), YGR087C (log2FC = −5.09), and YHR094C (log2FC = −4.99) were significantly downregulated relative to early biofilms (padj < 10⁻¹²⁵). These genes displayed opposing expression patterns between early and mature stages (Figure 3).
+
+<p align="center">
+  <img src="results/r_outputs/Heatmap_top20_mature_vs_early.png" width="60%">
+</p>
+<p align="center">
+  <em><strong>Figure 3.</strong> Heatmap of the top 20 differentially expressed genes in the mature vs early comparison. Expression values were variance-stabilized and scaled by row. Each column represents one biological replicate, grouped by developmental stage (early, thin, and mature), and each row represents one gene. Warmer colors (red) indicate higher relative expression, and cooler colors (blue) indicate lower relative expression. Hierarchical clustering shows clear stage-specific expression patterns, with mature and early samples forming distinct clusters and thin samples displaying intermediate expression profiles.
+.</em>
+</p>
+
 ### Functional Enrichment 
-Gene Ontology ORA was performed using significantly differentially expressed (DE) genes (padj < 0.05). The mature versus early comparison showed significant enrichment of transmembrane transport (190 genes; padj = 1.52 × 10⁻⁵), generation of precursor metabolites and energy (97 genes; padj = 2.71 × 10⁻⁵), and ATP metabolic process (31 genes; padj = 4.30 × 10⁻⁴). Additional enriched categories included organic acid metabolic process and oxoacid metabolic process (Figure 5).
-Gene Set Enrichment Analysis (GSEA) further identified significant enrichment of metabolism-associated GO biological process terms across the ranked gene list. Both positive and negative normalized enrichment scores were observed, reflecting coordinated upregulation and downregulation of gene sets between mature and early stages (Figure 6).
+Gene Ontology ORA was performed using significantly differentially expressed (DE) genes (padj < 0.05). The mature versus early comparison showed significant enrichment of transmembrane transport (190 genes; padj = 1.52 × 10⁻⁵), generation of precursor metabolites and energy (97 genes; padj = 2.71 × 10⁻⁵), and ATP metabolic process (31 genes; padj = 4.30 × 10⁻⁴). Additional enriched categories included organic acid metabolic process and oxoacid metabolic process (Figure 4).
+
+<p align="center">
+  <img src="results/r_outputs/ORA_GO_BP_mature_vs_early.png" width="60%">
+</p>
+<p align="center">
+  <em><strong>Figure 4.</strong> Gene Ontology (GO) biological process over-representation analysis for the mature vs early comparison. Each dot represents an enriched GO term. The x-axis shows the GeneRatio (the proportion of differentially expressed genes associated with each term), and dot size reflects the number of genes contributing to that term. Dot color represents the adjusted p-value (p.adjust), with lighter colors indicating stronger statistical significance. Enriched processes are primarily related to transmembrane transport, organic and oxoacid metabolism, energy generation, and ATP metabolic processes.</em>
+</p>
+
+Gene Set Enrichment Analysis (GSEA) further identified significant enrichment of metabolism-associated GO biological process terms across the ranked gene list. Both positive and negative normalized enrichment scores were observed, reflecting coordinated upregulation and downregulation of gene sets between mature and early stages (Figure 4).
+
+<p align="center">
+  <img src="results/r_outputs/GSEA_GO_BP_mature_vs_early.png" width="60%">
+</p>
+<p align="center">
+  <em><strong>Figure 5.</strong> Figure 6. GSEA results for the mature vs early comparison. Dots represent enriched GO biological processes, sized by gene count and colored by adjusted p-value. GeneRatio reflects the proportion of genes contributing to each pathway. Enrichment of translation-, mitochondrial-, and metabolism-related processes.<em>
+</p>
+
 ## Discussion 
 During biological wine aging, flor yeasts develop from early surface attachment into a stable biofilm (velum) at the air–liquid interface. The transcriptomic data show that this progression is accompanied by clear and stage-specific changes in gene expression (Figure 1). Principal component analysis separated early, thin, and mature samples, with thin samples positioned between early and mature stages, supporting a gradual transition rather than an abrupt shift.
 
-The largest transcriptional changes occurred between mature and early stages (Table 1; Figures 2 and 3). Volcano and MA plots show both strong upregulation and downregulation of many genes, indicating coordinated regulation rather than random variation. In yeast, coordinated induction of some genes alongside repression of others has been described as a common response to environmental change.<sup>12</sup> The bidirectional expression patterns observed here are consistent with this type of global transcriptional adjustment during biofilm maturation.
+The largest transcriptional changes occurred between mature and early stages (Table 1 and Figure 2). Volcano and MA plots show both strong upregulation and downregulation of many genes, indicating coordinated regulation rather than random variation. In yeast, coordinated induction of some genes alongside repression of others has been described as a common response to environmental change.<sup>12</sup> The bidirectional expression patterns observed here are consistent with this type of global transcriptional adjustment during biofilm maturation.
 
-At the gene level, YIR019C (FLO11) was strongly upregulated in mature biofilms (Figure 4). FLO11 encodes a cell surface protein required for adhesion and biofilm formation in S. cerevisiae.<sup>13</sup> Increased expression of FLO11 in mature samples is consistent with stabilization of the velum structure at the wine surface, where cell adhesion is essential. Other genes showed strong downregulation in mature relative to early stages (Figure 4), further supporting that velum maturation involves defined regulatory changes.
+At the gene level, YIR019C (FLO11) was strongly upregulated in mature biofilms (Figure 3). FLO11 encodes a cell surface protein required for adhesion and biofilm formation in S. cerevisiae.<sup>13</sup> Increased expression of FLO11 in mature samples is consistent with stabilization of the velum structure at the wine surface, where cell adhesion is essential. Other genes showed strong downregulation in mature relative to early stages (Figure 4), further supporting that velum maturation involves defined regulatory changes.
 
 Functional enrichment analysis helps explain these patterns. Over-representation analysis identified enrichment of transmembrane transport and energy-related processes, including ATP metabolic and organic acid metabolic pathways (Figure 5). Gene Set Enrichment Analysis showed similar patterns across the ranked gene list (Figure 6). Agreement between these approaches suggests that many genes involved in metabolism change together during maturation.
 
 These results align with known flor yeast physiology. After fermentation, flor yeasts shift from fermentative growth to oxidative metabolism under nutrient-limited conditions.<sup>1,14</sup> Oxygen exposure at the air–liquid interface promotes respiratory activity, and proteomic studies have reported increased abundance of mitochondrial and respiration-associated proteins during biofilm development.<sup>15</sup> Enrichment of transport-related processes suggests that mature biofilms adjust nutrient uptake and metabolite exchange as the velum structure develops.
 
-Overall, integration of global expression patterns (Figure 1), differential expression (Figures 2 and 3), gene-level changes (Figure 4), and pathway enrichment (Figures 5 and 6) indicates that velum maturation represents a structured developmental process driven by coordinated metabolic adaptation that supports survival during biological wine aging.
+Overall, integration of global expression patterns (Figure 1), differential expression (Figure 2), gene-level changes (Figure 3), and pathway enrichment (Figures 4 and 5) indicates that velum maturation represents a structured developmental process driven by coordinated metabolic adaptation that supports survival during biological wine aging.
 ## References
 1.	Mardanov AV, Eldarov MA, Beletsky AV, Tanashchuk TN, Kishkovskaya SA, Ravin NV. Transcriptome Profile of Yeast Strain Used for Biological Wine Aging Revealed Dynamic Changes of Gene Expression in Course of Flor Development. Front Microbiol. 2020 Apr 3;11. doi:10.3389/fmicb.2020.00538
 
