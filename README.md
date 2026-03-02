@@ -103,7 +103,7 @@ Gene Set Enrichment Analysis (GSEA) further identified significant enrichment of
   <img src="results/r_outputs/GSEA_GO_BP_mature_vs_early.png" width="60%">
 </p>
 <p align="center">
-  <em><strong>Figure 5.</strong> Figure 6. GSEA results for the mature vs early comparison. Dots represent enriched GO biological processes, sized by gene count and colored by adjusted p-value. GeneRatio reflects the proportion of genes contributing to each pathway. Enrichment of translation-, mitochondrial-, and metabolism-related processes.<em>
+  <em><strong>Figure 5.</strong> GSEA results for the mature vs early comparison. Dots represent enriched GO biological processes, sized by gene count and colored by adjusted p-value. GeneRatio reflects the proportion of genes contributing to each pathway. Enrichment of translation, mitochondrial, and metabolism related processes.</em>
 </p>
 
 ## Discussion 
