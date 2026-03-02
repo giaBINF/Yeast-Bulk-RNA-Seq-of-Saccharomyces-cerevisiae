@@ -41,9 +41,9 @@ docker run --rm \
 ```
 
 ## 2. Quantification with Salmon
-*Indexing and Quantification based on [this tutorial](https://www.hadriengourle.com/tutorials/rna/)*
+*Indexing and Quantification based on [this tutorial](https://www.hadriengourle.com/tutorials/rna/) but with Docker containers.*
 ```
-# Indexing transcriptome 
+# Indexing transcriptome
 docker run --rm \
   -v "$PWD":/work \
   -w /work \
