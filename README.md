@@ -49,3 +49,33 @@ Functional enrichment analysis helps explain these patterns. Over-representation
 These results align with known flor yeast physiology. After fermentation, flor yeasts shift from fermentative growth to oxidative metabolism under nutrient-limited conditions.<sup>1,14</sup> Oxygen exposure at the air–liquid interface promotes respiratory activity, and proteomic studies have reported increased abundance of mitochondrial and respiration-associated proteins during biofilm development.<sup>15</sup> Enrichment of transport-related processes suggests that mature biofilms adjust nutrient uptake and metabolite exchange as the velum structure develops.
 
 Overall, integration of global expression patterns (Figure 1), differential expression (Figures 2 and 3), gene-level changes (Figure 4), and pathway enrichment (Figures 5 and 6) indicates that velum maturation represents a structured developmental process driven by coordinated metabolic adaptation that supports survival during biological wine aging.
+## References
+1.	Mardanov AV, Eldarov MA, Beletsky AV, Tanashchuk TN, Kishkovskaya SA, Ravin NV. Transcriptome Profile of Yeast Strain Used for Biological Wine Aging Revealed Dynamic Changes of Gene Expression in Course of Flor Development. Front Microbiol. 2020 Apr 3;11. doi:10.3389/fmicb.2020.00538
+
+2.	Wang Z, Gerstein M, Snyder M. RNA-Seq: a revolutionary tool for transcriptomics. Nat Rev Genet. 2009 Jan;10(1):57–63. doi:10.1038/nrg2484
+
+3.	Patro R, Duggal G, Love MI, Irizarry RA, Kingsford C. Salmon provides fast and bias-aware quantification of transcript expression. Nat Methods. 2017 Apr;14(4):417–9. doi:10.1038/nmeth.4197
+4.	Bray NL, Pimentel H, Melsted P, Pachter L. Near-optimal probabilistic RNA-seq quantification. Nat Biotechnol. 2016 May;34(5):525–7. doi:10.1038/nbt.3519
+
+5.	Love MI, Huber W, Anders S. Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biol. 2014;15(12):550. doi:10.1186/s13059-014-0550-8 PubMed PMID: 25516281; PubMed Central PMCID: PMC4302049.
+
+6.	Robinson MD, McCarthy DJ, Smyth GK. edgeR: a Bioconductor package for differential expression analysis of digital gene expression data. Bioinformatics. 2010 Jan 1;26(1):139–40. doi:10.1093/bioinformatics/btp616
+
+7.	GitHub [Internet]. [cited 2026 Mar 1]. HowTo: fasterq dump. Available from: https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump
+
+8.	hbctraining/Intro-to-rnaseq-hpc-salmon [HTML] [Internet]. Teaching materials at the Harvard Chan Bioinformatics Core; 2025 [cited 2026 Mar 1]. Available from: https://github.com/hbctraining/Intro-to-rnaseq-hpc-salmon
+
+9.	Griffith M, Walker JR, Spies NC, Ainscough BJ, Griffith OL. Informatics for RNA Sequencing: A Web Resource for Analysis on the Cloud. Ouellette F, editor. PLoS Comput Biol. 2015 Aug 6;11(8):e1004393. doi:10.1371/journal.pcbi.1004393
+
+10.	Rivals I, Personnaz L, Taing L, Potier MC. Enrichment or depletion of a GO category within a class of genes: which test? Bioinformatics. 2007 Feb 15;23(4):401–7. doi:10.1093/bioinformatics/btl633
+
+11.	Yu G, Wang LG, Han Y, He QY. clusterProfiler: an R Package for Comparing Biological Themes Among Gene Clusters. OMICS: A Journal of Integrative Biology. 2012 May;16(5):284–7. doi:10.1089/omi.2011.0118
+
+12.	Gasch AP, Spellman PT, Kao CM, Carmel-Harel O, Eisen MB, Storz G, et al. Genomic Expression Programs in the Response of Yeast Cells to  Environmental Changes. Mol Biol Cell. 2000 Dec;11(12):4241–57. doi:10.1091/mbc.11.12.4241 PubMed PMID: 11102521; PubMed Central PMCID: PMC15070.
+
+13.	Lo WS, Dranginis AM. The Cell Surface Flocculin Flo11 Is Required for Pseudohyphae Formation and Invasion by Saccharomyces cerevisiae. Mol Biol Cell. 1998 Jan;9(1):161–71. doi:10.1091/mbc.9.1.161 PubMed PMID: 9436998; PubMed Central PMCID: PMC25236.
+
+14.	David-Vaizant V, Alexandre H. Flor Yeast Diversity and Dynamics in Biologically Aged Wines. Front Microbiol. 2018 Sep 25;9:2235. doi:10.3389/fmicb.2018.02235 PubMed PMID: 30319565; PubMed Central PMCID: PMC6167421.
+
+15.	Moreno-García J, Mauricio JC, Moreno J, García-Martínez T. Differential Proteome Analysis of a Flor Yeast Strain under Biofilm Formation. Int J Mol Sci. 2017 Mar 28;18(4):720. doi:10.3390/ijms18040720 PubMed PMID: 28350350; PubMed Central PMCID: PMC5412306.
+
