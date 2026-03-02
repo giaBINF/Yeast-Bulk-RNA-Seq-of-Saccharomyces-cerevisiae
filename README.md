@@ -30,9 +30,32 @@ GSEA was performed using gseGO on a ranked gene list ordered by shrunken log2 fo
 ## Results
 ### Global Transcriptomic Structure
 Principal component analysis (PCA) was performed on variance-stabilized (VST) normalized counts to assess global transcriptomic structure across early, thin, and mature biofilm stages. PC1 explained 67% of the total variance, while PC2 explained 26%. Samples clustered distinctly according to developmental stage, with early, thin, and mature biofilms forming well-separated groups along PC1. Samples from the same stage grouped tightly together, indicating that gene expression patterns were consistent within each stage. The clear separation between early and mature samples suggests substantial transcriptomic remodeling during biofilm maturation, while thin-stage samples occupied an intermediate position, consistent with a transitional developmental state (Figure 1).
-![Figure 1: PCA plot](results/r_outputs/PCA_stage.png)
+<img src="results/r_outputs/PCA_stage.png" width="550">
+
 ### Differential Expression Overview
 Differential expression analysis was performed between each pair of biofilm stages (early vs thin, early vs mature, and thin vs mature) using DESeq2 with log2 fold change shrinkage. The mature versus early comparison exhibited the greatest number and magnitude of transcriptional changes (Table 2). Volcano and MA plots demonstrated widespread differential expression across biofilm stages (Figures 2 and 3). In all comparisons, most genes were centered near zero log2 fold change, indicating limited expression differences for most genes. However, the mature versus early contrast exhibited the greatest dispersion of fold changes and the highest number of significantly upregulated and downregulated genes. Comparatively, the mature versus thin and thin versus early comparisons displayed narrower and intermediate magnitudes of fold change, respectively.
+
+<p align="center">
+  <div style="display: inline-block; text-align: center; width: 30%;">
+    <strong>A</strong><br>
+    <img src="results/r_outputs/Volcano_mature_vs_early.png" width="100%">
+  </div>
+
+  <div style="display: inline-block; text-align: center; width: 30%;">
+    <strong>B</strong><br>
+    <img src="results/r_outputs/Volcano_mature_vs_thin.png" width="100%">
+  </div>
+
+  <div style="display: inline-block; text-align: center; width: 30%;">
+    <strong>C</strong><br>
+    <img src="results/r_outputs/Volcano_thin_vs_early.png" width="100%">
+  </div>
+</p>
+
+<p align="center">
+  <em><strong>Figure 2.</strong> Volcano plots for (A) mature vs early, (B) mature vs thin, and (C) thin vs early comparisons.</em>
+</p>
+
 ### Specific Gene Examples
 Several genes showed large magnitude log2 fold changes in the mature versus early comparison. YNR071C (log2FC = 9.01), YNR073C (log2FC = 8.21), and YIR019C (log2FC = 5.42) were among the most strongly upregulated genes in mature biofilms (padj < 10⁻¹¹⁵). Conversely, YJL052W (log2FC = −5.34), YGR087C (log2FC = −5.09), and YHR094C (log2FC = −4.99) were significantly downregulated relative to early biofilms (padj < 10⁻¹²⁵). These genes displayed opposing expression patterns between early and mature stages (Figure 4).
 ### Functional Enrichment 
